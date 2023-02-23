@@ -1,9 +1,13 @@
 # stereo-matching
 
 ## Implementation
+
 Generate points
+
 `python data/generate_points.py`
+
 Generate plot
+
 `python tools/epipolar_geometry.py --r_img ./data/right.jpg --l_img ./data/left.jpg`
 
 
