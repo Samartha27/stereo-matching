@@ -13,7 +13,7 @@ Generate plot \
 
 For Epiploar_json directory, only run: \
  `python tools/generate_fundamental.py  --l_img ./data/c078.jpg --r_img ./data/c076.jpg --l_keypoints c078 --r_keypoints c076 --frames 9250 9251` \
- or 
+ or \
  `python tools/generate_fundamental.py  --l_img ./data/c078.jpg --r_img ./data/c076.jpg --l_keypoints c078 --r_keypoints c076 --frames 9250`
 
 ## Sample output:
