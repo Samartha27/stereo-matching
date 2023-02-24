@@ -12,14 +12,14 @@ Generate plot \
 
 
 For Epiploar_json directory, only run: \
- `python tools/generate_fundamental.py  --l_img ./data/c078.jpg  \
-                                        --r_img ./data/c076.jpg  \
-                                        --l_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c078/keypoints.json  \
+ `python tools/generate_fundamental.py  --l_img ./data/c078.jpg  
+                                        --r_img ./data/c076.jpg  
+                                        --l_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c078/keypoints.json  
                                         --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c076/keypoints.json --frames 9250` \
  or \
- `python tools/generate_fundamental.py  --l_img ./data/c078.jpg  \
-                                        --r_img ./data/c076.jpg  \
-                                        --l_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c078/keypoints.json  \
+ `python tools/generate_fundamental.py  --l_img ./data/c078.jpg  
+                                        --r_img ./data/c076.jpg  
+                                        --l_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c078/keypoints.json  
                                         --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c076/keypoints.json --frames 9250 9251`
 ## Sample output:
 Fundamental matrix : \
