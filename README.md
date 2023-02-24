@@ -12,7 +12,9 @@ Generate plot \
 
 
 For Epiploar_json directory, only run: \
- `python tools/generate_fundamental.py  --l_img /Users/stlp/Desktop/sam/ram/pose/test/S014/c078/c078.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/test/S014/c076/c076.jpg --l_keypoints c078 --r_keypoints c076 --frames 9250`
+ `python tools/generate_fundamental.py  --l_img ./data/c078.jpg --r_img ./data/c076.jpg --l_keypoints c078 --r_keypoints c076 --frames 9250 9251` \
+ or 
+ `python tools/generate_fundamental.py  --l_img ./data/c078.jpg --r_img ./data/c076.jpg --l_keypoints c078 --r_keypoints c076 --frames 9250`
 
 ## Sample output:
 Fundamental matrix : \
