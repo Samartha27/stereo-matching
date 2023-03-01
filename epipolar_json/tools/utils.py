@@ -118,7 +118,7 @@ def plot_epipolar_lines(img1, img2, points1, points2,filename):
     plt.savefig( "./output/image/"+ filename +'.pdf')
 
 
-def draw_epipolar_lines(img1, img2, points1, F):
+def draw_epipolar_lines(img1, img2, points1, points2, F):
     
     
     h, w, c = img1.shape
@@ -139,11 +139,13 @@ def draw_epipolar_lines(img1, img2, points1, F):
     for i in range(n):
         p1 = points1.T[:, i]
         color = "#%06x" % random.randint(0, 0xFFFFFF)
-        ax1.scatter(*p1.reshape(-1)[:2], s= 3, color=color)
+        ax1.scatter(*p1.reshape(-1)[:2], s=3, color=color)
 
         coeffs = F @ p1
+        p2 = points2.T[:, i]
         x, y = plot_line(coeffs, (0, 3000))
         ax2.plot(x, y, color=color, linewidth=1.0)
+        ax2.scatter(*p2.reshape(-1)[:2], s=3, color=color)
         
     ax1.set_xlim(0, w)
     ax1.set_ylim(h, 0)
