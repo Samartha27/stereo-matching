@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import random
 
 
 
@@ -118,8 +117,9 @@ def plot_epipolar_lines(img1, img2, points1, points2,filename):
     plt.savefig( "./output/image/"+ filename +'.pdf')
 
 
-def draw_epipolar_lines(img1, img2, points1, points2, F):
-    
+
+def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
+
     
     h, w, c = img1.shape
     n = points1.shape[0]
@@ -138,14 +138,19 @@ def draw_epipolar_lines(img1, img2, points1, points2, F):
     
     for i in range(n):
         p1 = points1.T[:, i]
-        color = "#%06x" % random.randint(0, 0xFFFFFF)
-        ax1.scatter(*p1.reshape(-1)[:2], s=3, color=color)
-
-        coeffs = F @ p1
         p2 = points2.T[:, i]
+        
+        
+        coeffs = p2.T @ F # Epipolar line in the image of camera 1 given the points in the image of camera 2
+        x, y = plot_line(coeffs, (-1000, w))
+        ax1.plot(x, y, color="blue", linewidth=1.0)
+        ax1.scatter(*p1.reshape(-1)[:2], s= 3, color="red")
+
+        
+        coeffs = F @ p1
         x, y = plot_line(coeffs, (0, 3000))
-        ax2.plot(x, y, color=color, linewidth=1.0)
-        ax2.scatter(*p2.reshape(-1)[:2], s=3, color=color)
+        ax2.plot(x, y, color="blue", linewidth=1.0)
+        ax2.scatter(*p2.reshape(-1)[:2], s= 3, color="red")
         
     ax1.set_xlim(0, w)
     ax1.set_ylim(h, 0)
@@ -153,4 +158,4 @@ def draw_epipolar_lines(img1, img2, points1, points2, F):
     ax2.set_ylim(h, 0)
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig( "./output/image/"+ filename +'.pdf')
