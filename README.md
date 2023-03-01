@@ -2,7 +2,7 @@
 
 ## Implementation
 
-For Epipolar directory, run 2 commands as mentioned below:\
+### For Epipolar directory, run 2 commands as mentioned below:\
 Generate points \
 `python data/generate_points.py`
 
@@ -11,7 +11,7 @@ Generate plot \
 
 
 
-For Epiploar_json directory, only run: \
+### For Epiploar_json directory, only run: \
  `python tools/generate_fundamental.py  --l_img ./data/c078.jpg  
                                         --r_img ./data/c076.jpg  
                                         --l_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/c078/keypoints.json  
