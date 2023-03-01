@@ -25,11 +25,11 @@ For Epiploar_json directory, only run: \
 
 
 Another example : \
-'python tools/generate_fundamental.py --l_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c028/c028.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c027/c027.jpg  --l_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c028/keypoints.json --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c027/keypoints.json --limit 1 --frames 16 '
+`python tools/generate_fundamental.py --l_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c028/c028.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c027/c027.jpg  --l_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c028/keypoints.json --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c027/keypoints.json --limit 1 --frames 16 `
 
 To draw epipolar line from a given fundamental matrix \
 
-'python tools/draw_line_from_fm.py --l_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c028/c028.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c027/c027.jpg  --l_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c028/keypoints.json --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c027/keypoints.json --limit 1 --frames 16 --fm /Users/stlp/Desktop/sam/ram/pose/epipolar/output/fundamental_matrix/c028_c027.npy'                                        
+`python tools/draw_line_from_fm.py --l_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c028/c028.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c027/c027.jpg  --l_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c028/keypoints.json --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c027/keypoints.json --limit 1 --frames 16 --fm /Users/stlp/Desktop/sam/ram/pose/epipolar/output/fundamental_matrix/c028_c027.npy`                                        
                                         
 ## Sample output:
 Fundamental matrix : \
