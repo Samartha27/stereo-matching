@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 
 
 
@@ -117,5 +118,37 @@ def plot_epipolar_lines(img1, img2, points1, points2,filename):
     plt.savefig( "./output/image/"+ filename +'.pdf')
 
 
+def draw_epipolar_lines(img1, img2, points1, F):
+    
+    
+    h, w, c = img1.shape
+    n = points1.shape[0]
 
+    nrows = 2
+    ncols = 1
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(6, 8))
+    
+    ax1 = axes[0]
+    ax1.set_title("Left")
+    ax1.imshow(img1)
+    
+    ax2 = axes[1]
+    ax2.set_title("Right")
+    ax2.imshow(img2)
+    
+    for i in range(n):
+        p1 = points1.T[:, i]
+        color = "#%06x" % random.randint(0, 0xFFFFFF)
+        ax1.scatter(*p1.reshape(-1)[:2], s= 3, color=color)
 
+        coeffs = F @ p1
+        x, y = plot_line(coeffs, (0, 3000))
+        ax2.plot(x, y, color=color, linewidth=1.0)
+        
+    ax1.set_xlim(0, w)
+    ax1.set_ylim(h, 0)
+    ax2.set_xlim(0, w)
+    ax2.set_ylim(h, 0)
+
+    plt.tight_layout()
+    plt.show()

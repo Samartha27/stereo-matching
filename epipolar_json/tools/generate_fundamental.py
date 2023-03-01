@@ -36,7 +36,7 @@ def main():
     print(points2.shape)
     assert (points1.shape == points2.shape)
 
-    F = utils.compute_fundamental_matrix_normalized(points1, points2,output_file)
+    F = utils.compute_fundamental_matrix_normalized(points1, points2, output_file)
 
     p1 = points1.T[:, 0]
     p2 = points2.T[:, 0]
