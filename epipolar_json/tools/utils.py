@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
-
+import random
+import math
 
 def compute_fundamental_matrix_normalized(points1, points2,filename):
  
@@ -55,7 +55,6 @@ def compute_fundamental_matrix(points1, points2):
     F = f.reshape(3, 3)
     
     
-    
     U, S, V = np.linalg.svd(F, full_matrices=True)
     S[-1] = 0 # constrain F and make rank 2 by zeroing out last singular value
     F = U @ np.diag(S) @ V # recombine again
@@ -96,7 +95,7 @@ def plot_epipolar_lines(img1, img2, points1, points2,filename):
         p1 = points1.T[:, i]
         p2 = points2.T[:, i]
         
-        
+        color = "#%06x" % random.randint(0, 0xFFFFFF)
         coeffs = p2.T @ F # Epipolar line in the image of camera 1 given the points in the image of camera 2
         x, y = plot_line(coeffs, (-1000, w))
         ax1.plot(x, y, color="blue", linewidth=1.0)
@@ -116,8 +115,20 @@ def plot_epipolar_lines(img1, img2, points1, points2,filename):
     plt.tight_layout()
     plt.savefig( "./output/image/"+ filename +'.pdf')
 
+def distance_pt_line(x,y, coeffs):  
+
+    a, b, c = coeffs  
+    d = abs((a*x + b*y + c)) / (math.sqrt(a*a + b*b)) 
+    
+    return d
 
 
+annos = {"keypoints": [
+            "nose","left_eye","right_eye","left_ear","right_ear",
+            "left_shoulder","right_shoulder","left_elbow","right_elbow",
+            "left_wrist","right_wrist","left_hip","right_hip",
+            "left_knee","right_knee","left_ankle","right_ankle"
+        ]}
 def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
 
     
@@ -140,17 +151,21 @@ def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
         p1 = points1.T[:, i]
         p2 = points2.T[:, i]
         
-        
+        color = "#%06x" % random.randint(0, 0xFFFFFF)
         coeffs = p2.T @ F # Epipolar line in the image of camera 1 given the points in the image of camera 2
         x, y = plot_line(coeffs, (-1000, w))
         ax1.plot(x, y, color="blue", linewidth=1.0)
         ax1.scatter(*p1.reshape(-1)[:2], s= 3, color="red")
 
+        print('Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p1[:2], coeffs)))
+        
         
         coeffs = F @ p1
         x, y = plot_line(coeffs, (0, 3000))
         ax2.plot(x, y, color="blue", linewidth=1.0)
         ax2.scatter(*p2.reshape(-1)[:2], s= 3, color="red")
+        
+        print('Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p2[:2], coeffs)))
         
     ax1.set_xlim(0, w)
     ax1.set_ylim(h, 0)

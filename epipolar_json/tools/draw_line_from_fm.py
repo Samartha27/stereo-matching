@@ -1,14 +1,12 @@
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 from os.path import basename, splitext
 import sys
 sys.path.append('/Users/stlp/Desktop/sam/ram/pose/epipolar_json/')
 from data import datasets
 from skimage import io
 import utils
-
 
 
 
