@@ -157,7 +157,7 @@ def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
         ax1.plot(x, y, color="blue", linewidth=1.0)
         ax1.scatter(*p1.reshape(-1)[:2], s= 3, color="red")
 
-        print('Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p1[:2], coeffs)))
+        print('Image1 : Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p1[:2], coeffs)))
         
         
         coeffs = F @ p1
@@ -165,7 +165,7 @@ def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
         ax2.plot(x, y, color="blue", linewidth=1.0)
         ax2.scatter(*p2.reshape(-1)[:2], s= 3, color="red")
         
-        print('Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p2[:2], coeffs)))
+        print('Image2 : Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p2[:2], coeffs)))
         
     ax1.set_xlim(0, w)
     ax1.set_ylim(h, 0)
