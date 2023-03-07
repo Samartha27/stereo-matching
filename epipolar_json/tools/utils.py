@@ -129,6 +129,7 @@ annos = {"keypoints": [
             "left_wrist","right_wrist","left_hip","right_hip",
             "left_knee","right_knee","left_ankle","right_ankle"
         ]}
+
 def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
 
     
@@ -164,7 +165,7 @@ def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
         x, y = plot_line(coeffs, (0, 3000))
         ax2.plot(x, y, color="blue", linewidth=1.0)
         ax2.scatter(*p2.reshape(-1)[:2], s= 3, color="red")
-        
+
         print('Image2 : Perpendicular distance from {0} = {1}'.format(annos["keypoints"][i],distance_pt_line(*p2[:2], coeffs)))
         
     ax1.set_xlim(0, w)
@@ -174,3 +175,21 @@ def draw_epipolar_lines(img1, img2, points1, points2,filename, F):
 
     plt.tight_layout()
     plt.savefig( "./output/image/"+ filename +'.pdf')
+
+
+def distances_epipolar_lines(points1, points2, F):
+
+    assert(points1.shape == points2.shape), "Dimensions of keypoints not equal"
+    n = points1.shape[0]
+
+    distances = []
+    for i in range(n):
+        p1 = points1.T[:, i]
+        p2 = points2.T[:, i]
+        
+        coeffs = F @ p1 # Original points converted to lines on neighbors
+        
+        distances.append(distance_pt_line(*p2[:2], coeffs))
+        #print(distances)
+        
+    return distances
