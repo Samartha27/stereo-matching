@@ -1,0 +1,4 @@
+c025 c029 /Users/stlp/Desktop/sam/ram/pose/epipolar_json/output/fundamental_matrix/c029_c025.npy
+c026 c027 /Users/stlp/Desktop/sam/ram/pose/epipolar_json/output/fundamental_matrix/c027_c026.npy
+c028 c026 /Users/stlp/Desktop/sam/ram/pose/epipolar_json/output/fundamental_matrix/c028_c026.npy
+c027 c028 /Users/stlp/Desktop/sam/ram/pose/epipolar_json/output/fundamental_matrix/c028_c027.npy
