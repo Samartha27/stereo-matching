@@ -1,3 +1,5 @@
+#Refer README file for sample command to run this file.
+
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
