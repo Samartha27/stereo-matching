@@ -74,8 +74,10 @@ def main():
             people_in_frame[idx2] = neighbor_dict
                 
         frames.append(people_in_frame)
-        if idx == 2:
-            break
+        
+        
+        # if idx == 2: # Use this to run only on first n frames
+        #     break
     
     f1.close()
 
