@@ -1,3 +1,5 @@
+# This file is used to replace empty dictionaries for some frames in the keypoints.json file with zeros for both "bbox" and "keypoints". 
+#Please change the path when you are using
 import json
 import numpy as np
 
