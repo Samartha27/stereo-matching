@@ -32,7 +32,17 @@ Another example : \
 ### To draw epipolar line from a given fundamental matrix
 
 `python tools/draw_line_from_fm.py --l_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c028/c028.jpg --r_img /Users/stlp/Desktop/sam/ram/pose/validation/S005/c027/c027.jpg  --l_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c028/keypoints.json --r_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/validation/S005/c027/keypoints.json --limit 1 --frames 16 --fm /Users/stlp/Desktop/sam/ram/pose/epipolar/output/fundamental_matrix/c028_c027.npy`                                        
-                                        
+
+
+### To get distances of keypoints of neighbor points from epipolar lines generated from original camera
+
+
+`python tools/distances.py --original_camera c027 --original_keypoints /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/S005/c027/keypoints.json --neighbor_keypoints  /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/S005/c026/keypoints.json /Users/stlp/Desktop/sam/ram/pose/vis_results/yolox/S005/c028/keypoints.json --fm ./data/fm_table.txt`
+
+
+
+
+
 ## Sample output:
 Fundamental matrix : \
  [[ 9.93947782e-07 -4.48011207e-05  1.63459154e-02] \
