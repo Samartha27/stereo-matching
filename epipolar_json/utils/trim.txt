@@ -1,0 +1,30 @@
+ffmpeg -i S001/c001/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c001/video.mp4
+ffmpeg -i S001/c002/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c002/video.mp4
+ffmpeg -i S001/c003/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c003/video.mp4
+ffmpeg -i S001/c004/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c004/video.mp4
+ffmpeg -i S001/c005/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c005/video.mp4
+ffmpeg -i S001/c006/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c006/video.mp4
+ffmpeg -i S001/c006/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S001/c007/video.mp4
+
+ffmpeg -i S003/c014/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c014/video.mp4
+ffmpeg -i S003/c015/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c015/video.mp4
+ffmpeg -i S003/c016/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c016/video.mp4
+ffmpeg -i S003/c017/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c017/video.mp4
+ffmpeg -i S003/c018/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c018/video.mp4
+ffmpeg -i S003/c019/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S003/c019/video.mp4
+
+ffmpeg -i S014/c076/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c076/video.mp4
+ffmpeg -i S014/c077/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c077/video.mp4
+ffmpeg -i S014/c078/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c078/video.mp4
+ffmpeg -i S014/c079/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c079/video.mp4
+ffmpeg -i S014/c080/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c080/video.mp4
+ffmpeg -i S014/c081/video.mp4 -ss 00:05:08 -to 00:05:35 -c:v copy -c:a copy ../sample_test/S014/c081/video.mp4
+
+ffmpeg -i S022/c129/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c129/video.mp4
+ffmpeg -i S022/c128/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c128/video.mp4
+ffmpeg -i S022/c127/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c127/video.mp4
+ffmpeg -i S022/c126/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c126/video.mp4
+ffmpeg -i S022/c125/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c125/video.mp4
+ffmpeg -i S022/c124/video.mp4 -ss 00:10:10 -to 00:10:35 -c:v copy -c:a copy ../sample_test/S022/c124/video.mp4
+
+

@@ -1,0 +1,34 @@
+Top down
+
+CUDA_VISIBLE_DEVICES=0 python demo/top_down_video_demo_with_mmdet.py \
+    /home/ipl/sam/mmdetection/configs/yolo/yolov3_d53_mstrain-608_273e_coco.py \
+    https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_mstrain-608_273e_coco/yolov3_d53_mstrain-608_273e_coco_20210518_115020-a2c3acb8.pth \
+    configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/hrnet_w48_coco_256x192.py \
+    https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_256x192-b9e0b3ab_20200708.pth \
+    --video-path /home/ipl/Downloads/sample_test/S014/c079/video.mp4 \
+    --out-video-root vis_results/yolov3/S014/c079/
+
+CUDA_VISIBLE_DEVICES=1 python demo/top_down_video_demo_with_mmdet.py \
+    /home/ipl/sam/mmdetection/configs/yolox/yolox_l_8x8_300e_coco.py \
+    https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_l_8x8_300e_coco/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth \
+    configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/hrnet_w48_coco_256x192.py \
+    https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_384x288-314c8528_20200708.pth \
+    --video-path /home/ipl/Downloads/sample_test/S001/c007/video.mp4 \
+    --out-video-root vis_results/yolox/S001/c007/
+
+Bottom up
+
+CUDA_VISIBEL_DEVICES=0 python demo/bottom_up_video_demo.py configs/body/2d_kpt_sview_rgb_img/associative_embedding/coco/hrnet_w32_coco_512x512.py https://download.openmmlab.com/mmpose/bottom_up/hrnet_w32_coco_512x512-bcb8c247_20200816.pth --video-path /home/ipl/Downloads/sample_test/S001/c006/video.mp4 --out-video-root vis_results/S001/c006/
+
+
+
+bash file
+for dir in S001/c001/ S001/c002/ S001/c003/ S001/c004/ S001/c005/ S001/c006/ S001/c007/ S003/c014/ S003/c015/ S003/c016/ S003/c017/ S003/c018/ S003/c019/ S014/c076/ S014/c077/ S014/c078/ S014/c079/ S014/c080/ S014/c081/ S022/c124/ S022/c125/ S022/c126/ S022/c127/ S022/c128/ S022/c129/  ; do
+	CUDA_VISIBLE_DEVICES=1 python demo/top_down_video_demo_with_mmdet.py \
+    /home/ipl/sam/mmdetection/configs/yolox/yolox_l_8x8_300e_coco.py \
+    https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_l_8x8_300e_coco/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth \
+    configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/hrnet_w48_coco_256x192.py \
+    https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_384x288-314c8528_20200708.pth \
+    --video-path /home/ipl/Downloads/test/"${dir}"video.mp4 \
+    --out-video-root vis_results/yolox/"${dir}"
+done
